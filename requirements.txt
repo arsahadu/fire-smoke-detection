@@ -1,0 +1,5 @@
+ultralytics==8.0.197
+gradio
+opencv-python
+matplotlib
+Pillow
