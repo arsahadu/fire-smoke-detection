@@ -1,11 +1,11 @@
-# Your full app code here
 
-# Combine detect_fire_image, process_videos, and UI interface
 import gradio as gr
 from ultralytics import YOLO
 import os
 
-model = YOLO("/content/drive/MyDrive/TCE/Projects/Fire & Smoke Detection by CCTV(Inlab Intern)/model_weights/runs/detect/train/weights/best.pt")
+d_data = "best.pt"
+
+model = YOLO(d_data)
 
 def detect_fire_image(img_path):
     results = model.predict(source=img_path, save=True, conf=0.25)
@@ -19,7 +19,7 @@ from datetime import timedelta
 import smtplib
 from email.message import EmailMessage
 
-model = YOLO("/content/drive/MyDrive/TCE/Projects/Fire & Smoke Detection by CCTV(Inlab Intern)/model_weights/runs/detect/train/weights/best.pt")
+model = YOLO(d_data)
 
 output_dir = "/content/outputs"
 os.makedirs(output_dir, exist_ok=True)
@@ -111,7 +111,7 @@ def process_videos(video1, video2):
     return metrics1['fire_frames'], metrics2['fire_frames'], alert_sent
 
 from ultralytics import YOLO
-model = YOLO("/content/drive/MyDrive/TCE/Projects/Fire & Smoke Detection by CCTV(Inlab Intern)/model_weights/runs/detect/train/weights/best.pt")
+model = YOLO(d_data)
 
 import gradio as gr
 import cv2
@@ -122,7 +122,7 @@ from IPython.display import Image as IPyImage
 from ultralytics import YOLO
 
 # Load your model
-model = YOLO("/content/drive/MyDrive/TCE/Projects/Fire & Smoke Detection by CCTV(Inlab Intern)/model_weights/runs/detect/train/weights/best.pt")
+model = YOLO(d_data)
 
 # Folder for output
 output_dir = "/content/outputs"
