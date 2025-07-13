@@ -277,4 +277,4 @@ video_ui = gr.Interface(
 gr.TabbedInterface(
     [image_ui, video_ui],
     ["Image Detection", "Video Detection"]
-).launch(debug=True)
+).launch(server_name="0.0.0.0", server_port=8080)
