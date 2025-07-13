@@ -21,7 +21,7 @@ from email.message import EmailMessage
 
 model = YOLO(d_data)
 
-output_dir = "/content/outputs"
+output_dir = "/outputs"
 os.makedirs(output_dir, exist_ok=True)
 
 def send_email_alert(vdo_name, vdo_time):
@@ -125,7 +125,7 @@ from ultralytics import YOLO
 model = YOLO(d_data)
 
 # Folder for output
-output_dir = "/content/outputs"
+output_dir = "/outputs"
 os.makedirs(output_dir, exist_ok=True)
 
 # ----------------------------
