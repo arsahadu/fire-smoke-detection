@@ -274,7 +274,10 @@ video_ui = gr.Interface(
     title="🎥 Fire Detection from Videos (Email Enabled)"
 )
 
-gr.TabbedInterface(
-    [image_ui, video_ui],
-    ["Image Detection", "Video Detection"]
-).launch(server_name="0.0.0.0", server_port=8080)
+if __name__ == "__main__":
+    import os
+    os.makedirs("outputs", exist_ok=True)  # ensures the folder exists
+    gr.TabbedInterface(
+        [image_ui, video_ui],
+        ["Image Detection", "Video Detection"]
+    ).launch(server_name="0.0.0.0", server_port=8080)
